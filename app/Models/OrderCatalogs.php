@@ -10,7 +10,7 @@ class OrderCatalogs extends Model
     protected $table = 'order_catalogs';
     protected $fillable = [
         'nama',
-        'nomor_telepon',
+        'notelp',
         'jenis_pencucian',
         'price',
         'nama_bank_pembayaran',

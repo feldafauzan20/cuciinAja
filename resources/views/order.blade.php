@@ -57,19 +57,19 @@
                         enctype="multipart/form-data">
                         @csrf
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="text" name="floating_name" id="floating_name"
+                            <input type="text" name="nama" id="nama"
                                 class="block py-2.5 px-0 w-full text-sm text-[#333446] bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
                                 placeholder=" " required />
-                            <label for="floating_name"
+                            <label for="nama"
                                 class="peer-focus:font-medium absolute text-sm text-[#333446]  duration-300 transform -translate-y-6 scale-75 top-3 left-0 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-[#333446] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 Nama
                             </label>
                         </div>
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="number" name="floating_notelp" id="floating_notelp"
+                            <input type="number" name="notelp" id="notelp"
                                 class="block py-2.5 px-0 w-full text-sm text-[#333446] bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
                                 placeholder=" " required />
-                            <label for="floating_notelp"
+                            <label for="notelp"
                                 class="peer-focus:font-medium absolute text-sm text-[#333446]  duration-300 transform -translate-y-6 scale-75 top-3 left-0 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-[#333446] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 Nomor Telepon
                             </label>
@@ -81,7 +81,7 @@
                                 <div class="flex items-center text-start mb-2 ps-4 border border-gray-200 rounded-sm ">
                                     <label class="w-full py-4 ms-2 text-sm font-medium text-[#333446]">
                                         <input name="jenis_pencucian[]" data-price="{{ $product->price }}"
-                                            type="checkbox" value="{{ $product->title }}"
+                                            type="checkbox" value="{{ $product->id }}"
                                             class="w-4 h-4 text-green-500 bg-gray-100 border-gray-300 rounded-sm focus:ring-green-500 focus:ring-2">
                                         {{ $product->title }}
                                     </label>
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                         <div class="relative z-0 w-full mb-5 group">
-                            <select name="bank" id="bank"
+                            <select name="nama_bank_pembayaran" id="nama_bank_pembayaran"
                                 class="block py-2.5 px-2 w-full text-sm text-[#333446] bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
                                 required>
                                 <option value="" disabled selected class=" text-white">Pilih Bank
@@ -132,10 +132,10 @@
                             </label>
                         </div>
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="file" name="bukti_transfer" id="bukti_transfer"
+                            <input type="file" name="upload_pembayaran" id="upload_pembayaran"
                                 class="block py-2.5 px-0 w-full text-sm text-[#333446] bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-white peer"
                                 required />
-                            <label for="bukti_transfer"
+                            <label for="upload_pembayaran"
                                 class="peer-focus:font-medium absolute text-sm text-[#333446] duration-300 transform -translate-y-6 scale-75 top-3 left-0 -z-10 origin-[0] peer-focus:start-0 peer-focus:text-[#333446] peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 Upload Bukti Transfer
                             </label>
