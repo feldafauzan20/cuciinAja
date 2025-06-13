@@ -23,23 +23,18 @@ class OrderController extends Controller
         $responseForm = $request->validate([
             'nama' => 'required',
             'notelp' => 'required',
-            'jenis_pencucian' => 'required',
+            'jenis_pencucian' => 'required|array',
             'nama_bank_pembayaran' => 'required',
             'upload_pembayaran' => 'required',
         ]);
-        $products = ProductCatalog::all();
-        $price = 0;
-        foreach ($responseForm['jenis_pencucian'] as $id) {
-            $price += $products->where('id', $id)->first()->price;
-        }
-        $responseForm['price'] = $price;
-        $responseForm['status'] = 'pending';
 
-        $responseForm['jenis_pencucian'] = implode(', ', $responseForm['jenis_pencucian']);
+        $products = ProductCatalog::whereIn('id', $responseForm['jenis_pencucian'])->get();
+        $responseForm['price'] = $products->sum('price');
+        $responseForm['status'] = 'pending';
+        $responseForm['jenis_pencucian'] = $products->pluck('title')->implode(', ');
 
         OrderCatalogs::create($responseForm);
 
         return view('history');
-
     }
 }
